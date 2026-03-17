@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="new.css">
+</head>
+<body>
+
+<div class="container">
+
+
+  <aside class="sidebar">
+    <h2>MyAdmin</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Products</li>
+      <li>Orders</li>
+      <li>Users</li>
+    </ul>
+  </aside>
+
+
+  <main class="main">
+
+
+    <div class="topbar">
+      <h2>Dashboard</h2>
+      <span id="date"></span>
+    </div>
+
+   
+    <div class="cards">
+      <div class="card">
+        <p>Total Products</p>
+        <h2 id="totalProducts">0</h2>
+      </div>
+      <div class="card">
+        <p>Total Quantity</p>
+        <h2 id="totalQuantity">0</h2>
+      </div>
+      <div class="card">
+        <p>Categories</p>
+        <h2 id="totalCategories">0</h2>
+      </div>
+    </div>
+
+   
+    <div class="section">
+
+      <div class="section-header">
+        <h3>Products</h3>
+        <button id="btn-open" onclick="toggleForm()">+ Add Product</button>
+      </div>
+
+
+      <div id="formContainer" class="form-container">
+        <h3>Product Form</h3>
+
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="number" id="price" placeholder="Price">
+        <input type="number" id="qty" placeholder="Quantity">
+
+        <select id="category">
+          <option value="">Select category</option>
+          <option>Books</option>
+          <option>Beauty</option>
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Drink</option>
+          <option>Food</option>
+        </select>
+
+        <div class="form-actions">
+          <button onclick="closeForm()">Cancel</button>
+          <button id="saveBtn" onclick="addProduct()">Save Product</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+      </table>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
